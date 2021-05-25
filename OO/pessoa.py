@@ -6,6 +6,16 @@ class Pessoa:
         self.filhos = list(filhos)
     def cumprimentar(self):
         return "Ola"
+
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributo_de_classe(cls):
+        return f'{cls} olhos {cls.olhos}'
+
+
 if __name__ == '__main__':
   lamartine = Pessoa(nome="Lamartine", idade=40)
   luciano = Pessoa(lamartine, nome='luciano')
@@ -17,4 +27,6 @@ del lamartine.olhos
 print(lamartine.__dict__)
 print(Pessoa.olhos)
 print(lamartine.olhos)
+print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+print(Pessoa.nome_e_atributo_de_classe(), luciano.nome_e_atributo_de_classe())
 
